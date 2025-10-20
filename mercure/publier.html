@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Détail Annonce - AutoKaz</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+          rel="stylesheet" />
+    <style>
+        /* Cacher les scrollbars sur les miniatures */
+        #thumbnails::-webkit-scrollbar {
+            display: none;
+        }
+
+        #thumbnails {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+
+    <header class="bg-white shadow-md p-2">
+        <div class="max-w-6xl mx-auto flex justify-between items-center text-sm px-4">
+            <h1 class="text-xl font-bold text-blue-600">AutoKaz</h1>
+            <nav>
+                <a href="#" class="text-gray-700 hover:text-blue-500">Accueil</a>
+                <a href="#" class="ml-3 text-gray-700 hover:text-blue-500">Publier une annonce</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto mt-10 bg-white rounded-xl shadow p-6">
+        <div class="flex flex-col md:flex-row gap-6">
+            <div class="w-full md:w-1/2 flex flex-col items-center">
+                <img id="mainImage"
+                     src="https://img.leboncoin.fr/api/v1/lbcpb1/images/a9/06/3a/a9063a997d497ac785da59ebd42975c5dd6987a9.jpg?rule=ad-large"
+                     alt="Voiture"
+                     class="rounded-xl w-full h-64 object-cover mb-4" />
+
+                <div class="relative w-full">
+                    <button id="scrollLeft"
+                            class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white border rounded-full p-1 shadow hover:bg-gray-100 z-10"
+                            aria-label="Défiler vers la gauche">
+                        ‹
+                    </button>
+                    <div id="thumbnails"
+                         class="overflow-x-auto whitespace-nowrap scroll-smooth scrollbar-hide px-10"
+                         style="scroll-behavior: smooth;">
+                        <img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/a9/06/3a/a9063a997d497ac785da59ebd42975c5dd6987a9.jpg?rule=ad-large"
+                             alt="Miniature 1"
+                             class="inline-block w-20 h-16 object-cover rounded cursor-pointer border-2 border-transparent hover:border-blue-600 mr-2" />
+                        <img src="https://cdn.pixabay.com/photo/2016/04/01/10/02/car-1298950_1280.jpg"
+                             alt="Miniature 2"
+                             class="inline-block w-20 h-16 object-cover rounded cursor-pointer border-2 border-transparent hover:border-blue-600 mr-2" />
+                        <img src="https://cdn.pixabay.com/photo/2015/01/19/13/51/car-604019_1280.jpg"
+                             alt="Miniature 3"
+                             class="inline-block w-20 h-16 object-cover rounded cursor-pointer border-2 border-transparent hover:border-blue-600 mr-2" />
+                        <img src="https://cdn.pixabay.com/photo/2018/03/23/19/01/car-3257890_1280.jpg"
+                             alt="Miniature 4"
+                             class="inline-block w-20 h-16 object-cover rounded cursor-pointer border-2 border-transparent hover:border-blue-600 mr-2" />
+                        <img src="https://cdn.pixabay.com/photo/2019/06/20/15/30/car-4286211_1280.jpg"
+                             alt="Miniature 5"
+                             class="inline-block w-20 h-16 object-cover rounded cursor-pointer border-2 border-transparent hover:border-blue-600" />
+                    </div>
+                    <button id="scrollRight"
+                            class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white border rounded-full p-1 shadow hover:bg-gray-100 z-10"
+                            aria-label="Défiler vers la droite">
+                        ›
+                    </button>
+                </div>
+            </div>
+
+            <div class="flex flex-col justify-between w-full md:w-1/2">
+                <div>
+                    <h2 class="text-2xl font-semibold text-gray-800">Peugeot 208</h2>
+                    <p class="text-gray-600 mt-1">75 000 km - Essence - 2017</p>
+                    <div class="mt-4 flex items-center gap-3">
+                        <span class="text-blue-600 font-bold text-xl">8 500 DH</span>
+                        <span class="bg-green-100 text-green-700 text-xs font-medium px-2 py-1 rounded">Très Bonne affaire</span>
+                    </div>
+                    <p class="mt-6 text-gray-700 leading-relaxed">
+                        Voiture en excellent état, bien entretenue, toutes révisions faites,
+                        pneus neufs, contrôle technique OK.
+                    </p>
+                </div>
+
+                <div class="mt-8">
+                    <button id="showContactBtn"
+                            class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition">
+                        Afficher contact
+                    </button>
+                    <div id="contactInfo" class="mt-3 hidden text-gray-800">
+                        <p><strong>Email :</strong> vendeur@example.com</p>
+                        <p><strong>Téléphone :</strong> 06 12 34 56 78</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-white text-center py-6 mt-12 text-sm text-gray-500">
+        &#169; 2025 AutoKaz. Tous droits réservés.
+    </footer>
+
+    <script>
+        // Bouton afficher/masquer contact
+        const btn = document.getElementById("showContactBtn");
+        const contact = document.getElementById("contactInfo");
+
+        btn.addEventListener("click", () => {
+            if (contact.classList.contains("hidden")) {
+                contact.classList.remove("hidden");
+                btn.textContent = "Masquer contact";
+            } else {
+                contact.classList.add("hidden");
+                btn.textContent = "Afficher contact";
+            }
+        });
+
+        // Galerie miniature - changer image principale au clic
+        const mainImage = document.getElementById("mainImage");
+        const thumbnails = document.querySelectorAll("#thumbnails img");
+
+        thumbnails.forEach((thumb) => {
+            thumb.addEventListener("click", () => {
+                mainImage.src = thumb.src;
+                // Optionnel : marquer la miniature active
+                thumbnails.forEach((t) => t.classList.remove("border-blue-600"));
+                thumb.classList.add("border-blue-600");
+            });
+        });
+
+        // Scroll des miniatures
+        const scrollLeftBtn = document.getElementById("scrollLeft");
+        const scrollRightBtn = document.getElementById("scrollRight");
+        const thumbnailsContainer = document.getElementById("thumbnails");
+
+        scrollLeftBtn.addEventListener("click", () => {
+            thumbnailsContainer.scrollBy({ left: -100, behavior: "smooth" });
+        });
+        scrollRightBtn.addEventListener("click", () => {
+            thumbnailsContainer.scrollBy({ left: 100, behavior: "smooth" });
+        });
+
+        // Marquer la première miniature active au chargement
+        thumbnails[0].classList.add("border-blue-600");
+    </script>
+</body>
+</html>

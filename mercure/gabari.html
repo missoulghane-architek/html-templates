@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoKaz</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+</head>
+<body class="bg-gray-100 font-sans">
+
+    <header class="bg-white shadow-md p-2">
+        <div class="max-w-6xl mx-auto flex justify-between items-center text-sm px-4">
+            <h1 class="text-xl font-bold text-blue-600">AutoKaz</h1>
+            <nav>
+                <a href="#" class="text-gray-700 hover:text-blue-500">Accueil</a>
+                <a href="#" class="ml-3 text-gray-700 hover:text-blue-500">Publier une annonce</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="bg-white py-4 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4">
+            <input type="text" placeholder="Rechercher une marque, un modèle..."
+                   class="w-full p-1.5 text-sm border border-gray-300 rounded-md shadow-sm" />
+        </div>
+    </section>
+
+    <!-- Formulaire de recherche simple -->
+    <section class="bg-white py-4 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4">
+            <form action="#" method="GET" class="flex flex-wrap items-center gap-2 text-xs">
+
+                <input type="text" name="query" placeholder="Marque ou modèle"
+                       class="flex-grow min-w-[120px] p-2 border border-gray-300 rounded-md" />
+
+                <select name="prix_max" class="p-2 border border-gray-300 rounded-md w-28">
+                    <option value="">Prix max</option>
+                    <option value="5000">5 000</option>
+                    <option value="10000">10 000</option>
+                    <option value="15000">15 000</option>
+                    <option value="20000">20 000</option>
+                    <option value="30000">30 000</option>
+                </select>
+
+                <select name="km_max" class="p-2 border border-gray-300 rounded-md w-28">
+                    <option value="">KM max</option>
+                    <option value="50000">50 000 km</option>
+                    <option value="100000">100 000 km</option>
+                    <option value="150000">150 000 km</option>
+                    <option value="200000">200 000 km</option>
+                </select>
+
+                <select name="carburant" class="p-2 border border-gray-300 rounded-md w-28">
+                    <option value="">Carburant</option>
+                    <option value="essence">Essence</option>
+                    <option value="diesel">Diesel</option>
+                    <option value="electrique">Électrique</option>
+                    <option value="hybride">Hybride</option>
+                </select>
+
+                <button type="submit"
+                        class="px-3 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition w-full sm:w-auto text-sm flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="7" stroke-linecap="round" stroke-linejoin="round" />
+                        <line x1="21" y1="21" x2="16.65" y2="16.65" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    Rechercher
+                </button>
+                <button type="submit"
+                        class="px-3 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition w-full sm:w-auto text-sm flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2a1 1 0 01-.293.707L15 13.414V19a1 1 0 01-1.447.894l-4-2A1 1 0 019 17v-3.586L3.293 6.707A1 1 0 013 6V4z" />
+                    </svg>
+                    Filtres avancés
+                </button>
+            </form>
+        </div>
+    </section>
+
+
+
+    <!-- Annonces -->
+    <main id="annonces" class="max-w-6xl mx-auto p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+        <div class="bg-white rounded-xl shadow hover:shadow-lg transition">
+            <img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/a9/06/3a/a9063a997d497ac785da59ebd42975c5dd6987a9.jpg?rule=ad-large" alt="Voiture" class="rounded-t-xl w-full h-48 object-cover">
+            <div class="p-2">
+                <h5 class="text-lg font-semibold text-gray-800">Peugeot 208</h5>
+                <p class="text-xs text-gray-500">75 000 km - Essence - 2017</p>
+                <div class="flex justify-between items-center mt-2">
+                    <span class="text-blue-600 font-bold text-xs">8 500 DH</span>
+                    <span class="bg-green-100 text-green-700 text-xs font-medium px-2 py-1 rounded">Très Bonne affaire</span>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white rounded-xl shadow hover:shadow-lg transition">
+            <img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/a9/06/3a/a9063a997d497ac785da59ebd42975c5dd6987a9.jpg?rule=ad-large" alt="Voiture" class="rounded-t-xl w-full h-48 object-cover">
+            <div class="p-2">
+                <h5 class="text-lg font-semibold text-gray-800">Peugeot 208</h5>
+                <p class="text-xs text-gray-500">75 000 km - Essence - 2017</p>
+                <div class="flex justify-between items-center mt-2">
+                    <span class="text-blue-600 font-bold text-xs">8 500 DH</span>
+                    <span class="bg-green-100 text-green-700 text-xs font-medium px-2 py-1 rounded">Bonne affaire</span>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white rounded-xl shadow hover:shadow-lg transition">
+            <img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/a9/06/3a/a9063a997d497ac785da59ebd42975c5dd6987a9.jpg?rule=ad-large" alt="Voiture" class="rounded-t-xl w-full h-48 object-cover">
+            <div class="p-2">
+                <h5 class="text-lg font-semibold text-gray-800">Peugeot 208</h5>
+                <p class="text-xs text-gray-500">75 000 km - Essence - 2017</p>
+                <div class="flex justify-between items-center mt-2">
+                    <span class="text-blue-600 font-bold text-xs">8 500 DH</span>
+                    <span class="bg-gray-100 text-gray-700 text-xs font-medium px-2 py-1 rounded">Offre équitable</span>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white rounded-xl shadow hover:shadow-lg transition">
+            <img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/a9/06/3a/a9063a997d497ac785da59ebd42975c5dd6987a9.jpg?rule=ad-large" alt="Voiture" class="rounded-t-xl w-full h-48 object-cover">
+            <div class="p-2">
+                <h5 class="text-lg font-semibold text-gray-800">Peugeot 208</h5>
+                <p class="text-xs text-gray-500">75 000 km - Essence - 2017</p>
+                <div class="flex justify-between items-center mt-2">
+                    <span class="text-blue-600 font-bold text-xs">8 500 DH</span>
+                    <span class="bg-gray-100 text-gray-700 text-xs font-medium px-2 py-1 rounded">Offre équitable</span>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white rounded-xl shadow hover:shadow-lg transition">
+            <img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/a9/06/3a/a9063a997d497ac785da59ebd42975c5dd6987a9.jpg?rule=ad-large" alt="Voiture" class="rounded-t-xl w-full h-48 object-cover">
+            <div class="p-2">
+                <h5 class="text-lg font-semibold text-gray-800">Peugeot 208</h5>
+                <p class="text-xs text-gray-500">75 000 km - Essence - 2017</p>
+                <div class="flex justify-between items-center mt-2">
+                    <span class="text-blue-600 font-bold text-xs">8 500 DH</span>
+                    <span class="bg-gray-100 text-gray-700 text-xs font-medium px-2 py-1 rounded">Offre équitable</span>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white rounded-xl shadow hover:shadow-lg transition">
+            <img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/a9/06/3a/a9063a997d497ac785da59ebd42975c5dd6987a9.jpg?rule=ad-large" alt="Voiture" class="rounded-t-xl w-full h-48 object-cover">
+            <div class="p-2">
+                <h5 class="text-lg font-semibold text-gray-800">Peugeot 208</h5>
+                <p class="text-xs text-gray-500">75 000 km - Essence - 2017</p>
+                <div class="flex justify-between items-center mt-2">
+                    <span class="text-blue-600 font-bold text-xs">8 500 DH</span>
+                    <span class="bg-green-100 text-green-700 text-xs font-medium px-2 py-1 rounded">Bonne affaire</span>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white rounded-xl shadow hover:shadow-lg transition">
+            <img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/a9/06/3a/a9063a997d497ac785da59ebd42975c5dd6987a9.jpg?rule=ad-large" alt="Voiture" class="rounded-t-xl w-full h-48 object-cover">
+            <div class="p-2">
+                <h5 class="text-lg font-semibold text-gray-800">Peugeot 208</h5>
+                <p class="text-xs text-gray-500">75 000 km - Essence - 2017</p>
+                <div class="flex justify-between items-center mt-2">
+                    <span class="text-blue-600 font-bold text-xs">8 500 DH</span>
+                    <span class="bg-green-100 text-green-700 text-xs font-medium px-2 py-1 rounded">Bonne affaire</span>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white rounded-xl shadow hover:shadow-lg transition">
+            <img src="https://img.leboncoin.fr/api/v1/lbcpb1/images/a9/06/3a/a9063a997d497ac785da59ebd42975c5dd6987a9.jpg?rule=ad-large" alt="Voiture" class="rounded-t-xl w-full h-48 object-cover">
+            <div class="p-2">
+                <h5 class="text-lg font-semibold text-gray-800">Peugeot 208</h5>
+                <p class="text-xs text-gray-500">75 000 km - Essence - 2017</p>
+                <div class="flex justify-between items-center mt-2">
+                    <span class="text-blue-600 font-bold text-xs">8 500 DH</span>
+                    <span class="bg-green-100 text-green-700 text-xs font-medium px-2 py-1 rounded">Bonne affaire</span>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <div class="max-w-7xl mx-auto px-6 mt-8 flex justify-center">
+        <nav class="inline-flex rounded-md shadow-sm isolate" aria-label="Pagination">
+            <a href="?page=1"
+               class="relative inline-flex items-center px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 rounded-l-md">
+                ‹
+            </a>
+            <a href="?page=1"
+               class="relative inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-600 border border-gray-300">1</a>
+            <a href="?page=2"
+               class="relative inline-flex items-center px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 hover:bg-gray-100">2</a>
+            <a href="?page=3"
+               class="relative inline-flex items-center px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 hover:bg-gray-100">3</a>
+            <span class="relative inline-flex items-center px-3 py-2 text-sm font-medium text-gray-400 bg-white border border-gray-300">…</span>
+            <a href="?page=10"
+               class="relative inline-flex items-center px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 hover:bg-gray-100">10</a>
+            <a href="?page=2"
+               class="relative inline-flex items-center px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 rounded-r-md">
+                ›
+            </a>
+        </nav>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="bg-white text-center py-6 mt-12 text-sm text-gray-500">
+        &#169; 2025 AutoKaz. Tous droits réservés.
+    </footer>
+
+</body>
+</html>
